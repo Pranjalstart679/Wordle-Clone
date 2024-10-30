@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Ratings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styleanime.css">
+    <script src="animescript.js"></script>
+
+</head>
+<body>
+    <h1 class="heading">ANIME RATINGS </h1>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <div class="controls">
+            <input type="text" class="search-bar" placeholder="Search anime..." onkeyup="searchAnime()">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterAnime('all')">All</button>
+                <button class="filter-btn" onclick="filterAnime('action')">Action</button>
+                <button class="filter-btn" onclick="filterAnime('drama')">Drama</button>
+                <button class="filter-btn" onclick="filterAnime('thriller')">Thriller</button>
+                <button class="filter-btn" onclick="filterAnime('fantasy')">Fantasy</button>
+                <button class="filter-btn" onclick="filterAnime('romance')">Romance</button>
+                <button class="filter-btn" onclick="filterAnime('scifi')">Sci-Fi</button>
+                <button class="filter-btn" onclick="filterAnime('sports')">Sports</button>
+                <button class="filter-btn" onclick="filterAnime('adventure')">Adventure</button>
+                <button class="filter-btn" onclick="filterAnime('comedy')">Comedy</button>                
+            </div>
+        </div>
+
+        <div class="anime-grid">
+            <!-- Add these cards inside the existing anime-grid div -->
+
+<div class="anime-card" data-genres="action,fantasy">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/17599.jpg" alt="Demon Slayer" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">Demon Slayer</h2>
+            <span class="anime-year">2019</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="review-count">4.9 (18,756 reviews)</span>
+        </div>
+        <div class="genre">Action, Fantasy</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+
+<div class="anime-card" data-genres="adventure,fantasy">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/10420.png" alt="Fullmetal Alchemist: Brotherhood" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">Fullmetal Alchemist: Brotherhood</h2>
+            <span class="anime-year">2009</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="review-count">4.9 (20,345 reviews)</span>
+        </div>
+        <div class="genre">Adventure, Fantasy</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+
+<div class="anime-card" data-genres="romance,drama">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/14943.jpg" alt="Your Name" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">Your Name</h2>
+            <span class="anime-year">2016</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="review-count">4.8 (16,789 reviews)</span>
+        </div>
+        <div class="genre">Romance, Drama</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+
+<div class="anime-card" data-genres="scifi,thriller">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/16210.jpg" alt="Steins;Gate" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">Steins;Gate</h2>
+            <span class="anime-year">2011</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="review-count">4.8 (14,567 reviews)</span>
+        </div>
+        <div class="genre">Sci-Fi, Thriller</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+
+<div class="anime-card" data-genres="sports,drama">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/14116.jpg" alt="Haikyuu!!" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">Haikyuu!!</h2>
+            <span class="anime-year">2014</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="review-count">4.9 (13,234 reviews)</span>
+        </div>
+        <div class="genre">Sports, Drama</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+
+<div class="anime-card" data-genres="adventure,comedy">
+    <img src="https://4kwallpapers.com/images/walls/thumbs_2t/15328.jpeg" alt="One Piece" class="anime-image">
+    <div class="anime-content">
+        <div class="anime-header">
+            <h2 class="anime-title">One Piece</h2>
+            <span class="anime-year">1999</span>
+        </div>
+        <div class="rating">
+            <div class="stars" onclick="rateAnime(event)">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="review-count">4.8 (25,678 reviews)</span>
+        </div>
+        <div class="genre">Adventure, Comedy</div>
+        <div class="comments">
+            <input type="text" class="comment-input" placeholder="Add a comment...">
+            <button class="comment-btn" onclick="addComment(this)">Comment</button>
+        </div>
+    </div>
+</div>
+            
+<div class="anime-card" data-genres="action,drama">
+                <img src="https://4kwallpapers.com/images/walls/thumbs_2t/10339.jpg" alt="Attack on Titan" class="anime-image">
+                <div class="anime-content">
+                    <div class="anime-header">
+                        <h2 class="anime-title">Attack on Titan</h2>
+                        <span class="anime-year">2013</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars" onclick="rateAnime(event)">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">4.8 (15,234 reviews)</span>
+                    </div>
+                    <div class="genre">Action, Drama</div>
+                    <div class="comments">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button class="comment-btn" onclick="addComment(this)">Comment</button>
+                    </div>
+                </div>
+</div>
+
+            
+<div class="anime-card" data-genres="adventure,comedy,fantasy">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Karakura_Klass.jpg/220px-Karakura_Klass.jpg" alt="One Piece" class="anime-image">
+                <div class="anime-content">
+                    <div class="anime-header">
+                        <h2 class="anime-title">Bleach</h2>
+                        <span class="anime-year">2004</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars" onclick="rateAnime(event)">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">4.7 (14,078 reviews)</span>
+                    </div>
+                    <div class="genre">Adventure, Comedy, Fantasy</div>
+                    <div class="comments">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button class="comment-btn" onclick="addComment(this)">Comment</button>
+                    </div>
+                </div>
+</div>
+
+            <!-- Similar structure for other anime cards... -->
+        </div>
+    </div>
+
+</body>
+</html>
